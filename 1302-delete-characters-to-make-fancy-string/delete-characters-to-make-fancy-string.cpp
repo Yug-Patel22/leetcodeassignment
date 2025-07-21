@@ -2,7 +2,8 @@ class Solution {
 public:
     string makeFancyString(string s) {
         if(s.length()<3)return s;
-        string ans="";
+        string ans;
+        ans.reserve(s.length());
         int c=1;
         ans+=s[0];
         for(int i=1; i<s.length(); i++){
