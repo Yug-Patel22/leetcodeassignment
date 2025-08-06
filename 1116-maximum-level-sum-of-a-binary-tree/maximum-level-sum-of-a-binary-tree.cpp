@@ -9,6 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+ //bfs
 class Solution {
 public:
     int maxLevelSum(TreeNode* root) {
