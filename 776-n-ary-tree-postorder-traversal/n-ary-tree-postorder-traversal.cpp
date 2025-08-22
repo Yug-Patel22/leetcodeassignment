@@ -17,7 +17,7 @@ public:
     }
 };
 */
-
+//my
 class Solution {
 public:
     void post(Node * root,vector<int>&ans){
