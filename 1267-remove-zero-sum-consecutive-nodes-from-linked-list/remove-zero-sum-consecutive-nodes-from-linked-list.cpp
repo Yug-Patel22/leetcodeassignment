@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+ //chatgpt
 class Solution {
 public:
     ListNode* removeZeroSumSublists(ListNode* head) {
