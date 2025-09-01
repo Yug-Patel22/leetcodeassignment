@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+ //O(n)
 class Solution {
 public:
     ListNode * rev(ListNode * head){
