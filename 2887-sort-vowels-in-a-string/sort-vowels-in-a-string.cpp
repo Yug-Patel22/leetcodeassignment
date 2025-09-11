@@ -1,3 +1,4 @@
+//by integer vector
 class Solution {
 public:
     bool isVowel(char a){
