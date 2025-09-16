@@ -1,3 +1,4 @@
+//pair
 class MinStack {
     stack<pair<int,int>>s;
 public:
