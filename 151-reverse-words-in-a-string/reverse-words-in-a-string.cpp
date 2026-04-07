@@ -1,27 +1,31 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        stack<char>s1;
+        int flag=0;
         string ans="";
-        for(int i=s.length()-1; i>=0; i--){
-            if(s[i]!=' '){
-                s1.push(s[i]);
-            }
-            else if(s[i]==' ' && !s1.empty()){
-                while(!s1.empty()){
-                    ans+=s1.top();
-                    s1.pop();
+        for(int i=0; i<s.length(); i++){
+            if(!flag && s[i]==' ')continue;
+            if(!flag && s[i]!=' ')flag=1;
+            if(s[i]!=' ')ans+=s[i];
+            if(s[i]==' ' && s[i-1]!=' ')ans+=s[i];
+        }
+        if(ans[ans.length()-1]==' ')ans.pop_back();
+        int l=0,r=ans.length()-1;
+        while(l<r){
+            swap(ans[l++],ans[r--]);
+        }
+        l=0,r=0;
+        int lastind=0;
+        while(l<ans.length() && r<ans.length()){
+            if(r!=ans.length()-1 && ans[r+1]!=' ')r++;
+            if(ans[r+1]==' ' || r==ans.length()-1){
+                lastind=r+2;
+                while(l<r){
+                    swap(ans[l++],ans[r--]);
                 }
-                ans+=' ';
+                l=r=lastind;
             }
         }
-        if(!s1.empty()){
-            while(!s1.empty()){
-            ans+=s1.top();
-            s1.pop();
-            }
-        }
-        else ans.pop_back();
         return ans;
     }
 };
