@@ -16,7 +16,10 @@ public:
                 }
             }
             if(ind==0)return "";
-            if(ind!=-1) ans=ans.substr(0,ind);
+            if(ind!=-1){
+                int n=ans.length();
+                for(int j=0; j<n-ind; j++)ans.pop_back();
+            }
         }
         return ans;
     }
